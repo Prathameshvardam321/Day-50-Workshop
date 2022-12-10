@@ -38,7 +38,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const phoneError = document.querySelector('.phone-error');
     phoneElement.addEventListener('input', function () {
         let phone = document.querySelector('#phone').value;
-
         try {
             (new Contact()).phone = phone;
             phoneError.textContent = '';
@@ -48,28 +47,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 })
 const save = (event)=>{
-
-    try{
+  try{
       setContactObject();
     }catch(e){
       console.log(e);
       return;
     }
   }
-  
-  const setContactObject = () => {
-      let contactObject = new Contact()
-      let names = getInputValueById('#name');
-      contactObject._fullName = getInputValueById('#name')
-      contactObject._address = getInputValueById('#address');
-      contactObject._city = getInputValueById('#city');
-      contactObject._state = getInputValueById('#state');
-      contactObject._zip = getInputValueById('#zip');
-      contactObject._phone = getInputValueById('#phone');
-      alert(contactObject.toString())
-    }
-  
-    const getInputValueById = (id) => {
-      let value = document.querySelector(id).value;
-      return value;
-    }
+    const setContactObject = () => {
+        let contactObject = new Contact();
+        contactObject._fullName = getInputValueById('#name');
+        contactObject._address = getInputValueById('#address');
+        contactObject._city = getInputValueById('#city');
+        contactObject._state = getInputValueById('#state');
+        contactObject._zip = getInputValueById('#zip');
+        contactObject._phone = getInputValueById('#phone');
+        alert(JSON.stringify(contactObject))
+      }
+    
+      const getInputValueById = (id) => {
+        let value = document.querySelector(id).value;
+        return value;
+      }
