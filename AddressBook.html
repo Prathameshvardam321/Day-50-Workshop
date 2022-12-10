@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book Form</title>
+    <style>
+        body {
+            margin : 0;
+            height: 100%;
+        }
+
+        .header {
+            padding: 15px 0;
+            background: #ffffff;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid blue;
+        }
+
+        .logo-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 80%;
+            border: 0px solid rgb(34, 34, 219);
+        }
+
+        .logo-content-img {
+            background: #4b84ca 0% 0% no-repeat padding-box;
+        }
+
+        .adbk-text {
+            text-align: left;
+            font: normal normal bold 22px/25px Montserrat;
+            font-family: "Montserrat" , sans-serif;
+            letter-spacing: 0px;
+            color: #0d8df5;
+            text-transform: uppercase;
+        }
+
+        .adbk-book {
+            color: #42515F;
+        }
+
+        * { box-sizing: border-box;}
+
+        .form-head {
+            text-align: center;
+            font: normal normal normal 28px/37px Roboto;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .form-head-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: #008CFF 0% 0% no-repeat padding-box;
+            height: 108px;
+            width: 100%;
+            margin-top: 0px;
+            padding-bottom: 10px;
+            border-radius: 8px 8px 0px 0px;
+        }    
+
+        .form-content {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid white;
+        }
+
+        .form {
+            width: 65%;
+            padding: 20px 30px;
+            background:white 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            border: 1px solid #d5dce3;
+            border-radius: 8px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+        }
+
+        .text {
+            text-align: left;
+            font: normal normal normal 18px/24px Roboto;
+            letter-spacing: 0px;
+            color: #42515F;
+            opacity: 1;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            border: 1px solid #BDBDBD;
+            border-radius: 3px;
+            opacity: 1;
+        }
+
+        .row-content {
+            display: flex;
+            flex-direction: column;
+            padding-left: 140px;
+            padding-right: 140px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="./adbk-logo (1).png" alt="" width="50px" height="50px">
+            <div>
+                <span class="adbk-text">Address</span><br>
+                <span class="adbk-text adbk-book">Book</span>
+            </div>
+        </div>
+    </header>
+    <div class="form-content">
+        <form class="form" >
+            <div class="form-head-content">
+                <div class="form-head" >Person Address Form 
+                    <a href="AddressBook.html" ><img src="/cancellogo.png" alt="image" width="20px" height="21px"></a>
+                </div>
+            </div>
+
+            <div class="row-content">
+                <label for="fullname" class="label text">Full Name</label><br>
+                <input class="input" type="text" id="flname" name="fullname" rows="1" cols="25">
+            </div>
+
+            <div class="row-content">    
+                <label for="phone" class="label text">Phone Number</label><br>
+                <input class="input" type="tel" id="phone" name="phonenumber">
+            </div>
+            
+            <div class="row-content">
+                <label for="address" class="label text">Address</label><br>
+                <textarea class="input" type="text" id="address" name="address" rows="" cols="10"></textarea>
+            </div>
+            
+            <div class="row-content-exp">
+                <div class="oneRow-content">
+                  <label class="label text" for="city">City</label>
+                  <select class="select-input" id="city" name="City" required>
+                    <option value="" selected disabled hidden>Select City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Thane">Thane</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Delhi">Delhi</option>
+                  </select>
+                </div>
+             
+              <div class="oneRow-content">
+                <label class="label text" for="state">State</label>
+                <select class="select-input" id="state" name="State" required>
+                  <option value="" selected disabled hidden>Select State</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="MadhyaPradesh">MadhyaPradesh</option>
+                </select>
+              </div>
+              <div class="oneRow-content">
+                <label class="label text" for="zip">Zip</label>
+                <input class="input" type="text" name="Zip" id="zip" required />
+              </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
