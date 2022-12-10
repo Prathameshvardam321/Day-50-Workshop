@@ -69,3 +69,15 @@ const save = (event)=>{
         let value = document.querySelector(id).value;
         return value;
       }
+      const createAddressBook = () =>{
+        let addBook = new Contact();
+      addBook._fullName = getInputValueById('#name');
+      addBook._address = getInputValueById('#address');
+      addBook._city = getInputValueById('#city');
+      addBook._state = getInputValueById('#state');
+      addBook._zip = getInputValueById('#zip');
+      addBook._phone = getInputValueById('#phone');
+      addBook._email = getInputValueById('#email');
+      alert(addBook.toString())
+  
+    }
