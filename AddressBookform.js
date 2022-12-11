@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded',(event) => {
             phnumberError.textContent = e;
         }
     });
-
     const address = document.querySelector('#address');
     const addressError = document.querySelector('.address-error');
     address.addEventListener('input',function(){
