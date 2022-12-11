@@ -81,6 +81,10 @@
             justify-content: center;
             align-items: center;
             border: 0px solid white;
+            
+        }
+        .form-content:nth-child(2){
+            margin-right: 3px;
         }
 
         .form {
@@ -120,6 +124,67 @@
             padding-right: 140px;
             margin-bottom: 30px;
         }
+        .row-content-add{
+            display: flex;
+           flex-direction: row;
+           justify-content: flex-start;
+           padding-left: 0px;
+           padding-right: 5px;
+        }
+        .row-content-addbook{
+            display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+           padding-left: 25px;
+           padding-right: 4px;
+        }
+        .row-content-addbook:first-child{
+            padding-left: 0px;
+            padding-right: 4px;
+        }
+      
+        .add-reset-button{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        textarea{
+            resize: none;
+        }
+
+        .button{
+            font-size: 20px;
+            font-family: Roboto;
+            letter-spacing: 0px;
+            color: #42515f;
+            opacity: 1;
+            background: transparent;
+            border: none;
+            font-weight: 400;
+            min-width: 140px;
+            padding: 7px 7px;
+            border: 1px solid #707070;
+            cursor: pointer;
+        }
+
+        .add-Button{
+            margin-right: 30px;
+            border: 1px solid #d4cece;
+            border-radius: 5px;
+            background: #E2E2E2 0% 0% no-repeat padding-box;
+            background-color: #f5f5f5;
+            opacity: 1;
+        }
+
+        .reset-Button{
+            border: 1px solid #979494;
+            border-radius: 5px;
+            background: #d1cdcd 0% 0% no-repeat padding-box;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -136,8 +201,8 @@
         <form class="form" >
             <div class="form-head-content">
                 <div class="form-head" >Person Address Form 
-                    <a href="AddressBook.html" ><img src="/cancellogo.png" alt="image" width="20px" height="21px"></a>
                 </div>
+                <a href="AddressBook.html" > <img src="cancellogo.png" alt="image" width="40px" height="40px"></a>
             </div>
 
             <div class="row-content">
@@ -157,38 +222,41 @@
                 <textarea class="input" type="text" id="address" name="address" rows="" cols="10"></textarea>
                 <error-output class="address-error" for="address"></error-output>
             </div>
-            
-            <div class="row-content-exp">
-                <div class="oneRow-content">
-                  <label class="label text" for="city">City</label>
-                  <select class="select-input" id="city" name="City" required>
-                    <option value="" selected disabled hidden>Select City</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Thane">Thane</option>
-                    <option value="Nashik">Nashik</option>
-                    <option value="Delhi">Delhi</option>
-                  </select>
+            <div class="row-content">
+                    <div class="row-content-add">
+                        <div class="row-content-addbook">
+                          <label class="label text" for="city">City</label>
+                          <select class="select-input" id="city" name="City" required>
+                            <option value="" selected disabled hidden>Select City</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Thane">Thane</option>
+                            <option value="Nashik">Nashik</option>
+                            <option value="Delhi">Delhi</option>
+                          </select>
+                        </div>
+                     
+                      <div class="row-content-addbook">
+                        <label class="label text" for="state">State</label>
+                        <select class="select-input" id="state" name="State" required>
+                          <option value="" selected disabled hidden>Select State</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Punjab">Punjab</option>
+                          <option value="MadhyaPradesh">MadhyaPradesh</option>
+                        </select>
+                      </div>
+                      <div class="row-content-addbook">
+                        <label class="label text" for="zip">Zip</label>
+                        <input class="input" type="text" name="Zip" id="zip" required />
+                      </div>
+                    </div>
                 </div>
-             
-              <div class="oneRow-content">
-                <label class="label text" for="state">State</label>
-                <select class="select-input" id="state" name="State" required>
-                  <option value="" selected disabled hidden>Select State</option>
-                  <option value="Maharashtra">Maharashtra</option>
-                  <option value="Gujarat">Gujarat</option>
-                  <option value="Punjab">Punjab</option>
-                  <option value="MadhyaPradesh">MadhyaPradesh</option>
-                </select>
-              </div>
-              <div class="oneRow-content">
-                <label class="label text" for="zip">Zip</label>
-                <input class="input" type="text" name="Zip" id="zip" required />
-              </div>
-            </div>
-            <div class="add-reset">
-                <button type="submit" class="button addButton" id="addButton">Add</button>
-                <button type="reset" onclick="resetForm()" class=" button reset-Button">Reset</button>
-            </div>
+                <div class="row-content">
+                    <div class="add-reset-button">
+                        <button type="submit" class="button add-Button" id="Add-button">Add</button>
+                        <button type="reset" onclick="resetForm()" class=" button reset-Button">Reset</button>
+                    </div>
+                </div>  
         </form>
     </div>
 </body>
